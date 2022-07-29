@@ -1,6 +1,8 @@
 # WebGL Shader Editor
 A rudimentary WebGL fragment shader editor and viewer.
 
+![screenshot.png](https://github.com/nethe550/webgl-shader-editor/blob/main/image.png?raw=true)
+
 ## Usage
 The application requires an HTTP server to function.
 
