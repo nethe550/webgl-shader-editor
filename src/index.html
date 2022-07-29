@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="nethe550" />
+        <meta name="description" content="A rudimentary WebGL fragment shader editor and viewer." />
+        <title>WebGL Shader Editor</title>
+        <link rel="stylesheet" href="./static/css/index.css" />
+    </head>
+    <body>
+        <div id="page">
+            <div class="sub-page left" id="editor-wrapper">
+                <div class="sub-page-content">
+                    <div class="editor">
+                        <div class="editor-controls">
+                            <button id="run" class="editor-control" title="Run">
+                                <img src="./static/ico/run.svg" width="24" height="24" alt="Run" />
+                            </button>
+                            <button id="save" class="editor-control" title="Save">
+                                <img src="./static/ico/save.svg" width="24" height="24" alt="Save" />
+                            </button>
+                            <span class="editor-title">
+                                WebGL Shader Editor
+                            </span>
+                        </div>
+                        <textarea class="editor-text" autocorrect="off" spellcheck="false" placeholder="Type some code here..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-page-adjuster"></div>
+            <div class="sub-page right">
+                <div class="sub-sub-page top">
+                    <div class="sub-page-content" id="out-wrapper">
+                        <canvas id="out" width="360" height="360"></canvas>
+                    </div>
+                </div>
+                <div class="sub-sub-page-adjuster"></div>
+                <div class="sub-sub-page bottom">
+                    <div class="sub-page-content">
+                        <div id="console">
+                            <ul class="console-text">
+                                <!-- 
+                                    <li class="console-entry log">log</li>
+                                    <li class="console-entry warn">warning</li>
+                                    <li class="console-entry error">error</li>
+                                -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src='./static/js/index.js' type="module" defer></script>
+    </body>
+</html>

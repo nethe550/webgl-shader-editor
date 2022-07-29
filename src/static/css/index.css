@@ -1,0 +1,330 @@
+:root {
+
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-family-code: 'Courier New', Courier, monospace;
+
+    --font-color: rgb(255,255,255);
+    --font-color-log: rgb(180,180,180);
+    --font-color-warn: rgb(180,180,30);
+    --font-color-error: rgb(180,30,30);
+
+    --background-1: rgb(35,35,45);
+    --background-2: rgb(45,45,55);
+    --background-3: rgb(55,55,65);
+    --background-4: rgb(65,65,75);
+    --background-5: rgb(75,75,85);
+    --background-6: rgb(85,85,95);
+    --background-7: rgb(95,95,105);
+    --background-8: rgb(105,105,115);
+    --background-9: rgb(115,115,125);
+
+    --page-adjuster-size: 1em;
+
+}
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+* {
+
+    scrollbar-width: thin;
+
+}
+
+html, body {
+
+    font-family: var(--font-family);
+    color: var(--font-color);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    background: var(--background-2);
+
+}
+
+div#page {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+div.sub-page {
+
+    min-width: 20vw;
+
+    overflow: auto;
+
+}
+
+div.sub-page.left {
+
+    --width: calc(50% - var(--page-adjuster-size) / 2);
+
+    width: var(--width);
+
+    background: var(--background-3);
+
+}
+
+div.sub-page.right {
+
+    --width: calc(50% - var(--page-adjuster-size) / 2);
+
+    width: var(--width);
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+div.sub-page-adjuster {
+
+    width: var(--page-adjuster-size);
+
+    cursor: ew-resize;
+
+    background: var(--background-4);
+
+}
+
+div.sub-sub-page {
+
+    min-height: 20vh;
+
+    overflow: auto;
+
+}
+
+div.sub-sub-page.top {
+
+    --height: calc(75% - var(--page-adjuster-size) / 2);
+
+    height: var(--height);
+
+    background: var(--baackground-1);
+
+}
+
+div.sub-sub-page.bottom {
+
+    --height: calc(25% - var(--page-adjuster-size) / 2);
+
+    height: var(--height);
+
+    background: var(--background-2);
+
+}
+
+div.sub-sub-page-adjuster {
+
+    height: var(--page-adjuster-size);
+
+    cursor: ns-resize;
+
+    background: var(--background-4);
+
+}
+
+div.sub-page-content {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+div.editor {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+div.editor-controls {
+
+    --controls-padding: 0.25em;
+    --button-padding: 0.5em;
+
+    height: calc(24px + var(--button-padding) * 2 + var(--controls-padding) * 2);
+
+    padding: var(--controls-padding);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: var(--controls-padding);
+
+    background: var(--background-5);
+
+    border-bottom: 2px solid var(--background-6);
+
+}
+
+button.editor-control {
+
+    --size: calc(24px + var(--button-padding) * 2);
+
+    width: var(--size);
+    height: var(--size);
+
+    padding: var(--button-padding);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--background-7);
+    border-radius: 6px;
+
+    background: var(--background-6);
+
+    transition: all 125ms ease;
+
+}
+
+button.editor-control:hover {
+
+    border: 2px solid var(--background-8);
+    
+    background: var(--background-7);
+
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.25);
+
+}
+
+button.editor-control:active {
+
+    border: 2px solid var(--background-9);
+    
+    background: var(--background-8);
+
+    box-shadow: none;
+
+}
+
+span.editor-title {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-right: var(--controls-padding);
+
+}
+
+textarea.editor-text {
+
+    font-family: var(--font-family-code);
+    color: var(--font-color);
+
+    resize: none;
+
+    flex-grow: 1;
+
+    outline: none;
+
+    background: var(--background-1);
+
+    border: none;
+
+}
+
+div#console {
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    background: var(--background-1);
+
+    overflow: auto;
+
+}
+
+ul.console-text {
+
+    margin: 0;
+    padding: 0.5em;
+
+    display: flex;
+    flex-direction: column;
+
+    list-style-type: none;
+
+    overflow: auto;
+
+}
+
+li.console-entry {
+
+    font-family: var(--font-family-code);
+    font-weight: bold;
+
+    padding: 0;
+    margin: 0;
+
+}
+
+li.console-entry.log {
+
+    color: var(--font-color-log);
+
+}
+
+li.console-entry.warn {
+
+    color: var(--font-color-warn);
+
+}
+
+li.console-entry.error {
+
+    color: var(--font-color-error);
+
+}
+
+div#out-wrapper {
+
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+}
