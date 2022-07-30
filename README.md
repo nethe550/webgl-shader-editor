@@ -35,3 +35,7 @@ Make sure your terminal is in the same directory as the `server.js` file of the 
 
 ### Accessing the App
 After the HTTP server is started, go to [http://localhost:5501/](http://localhost:5501/).
+
+## TODO
+- [ ] Add GLSL syntax highlighting
+- [ ] Add animation capabilities
